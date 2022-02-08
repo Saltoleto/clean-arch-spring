@@ -18,6 +18,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDateTime;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.Mockito.when;
 
@@ -61,10 +62,14 @@ class UserCreateRegisterUseCaseTest {
 
 
     @Test
-    void sholdRegisterUser(){
+    void sholdBeRegisterUser(){
         useCase = new UserCreateRegisterUseCase(userDsGateway, userPresenter, userFactory);
         UserResponseModel register = useCase.register(userRequestModel);
-        System.out.println(register);
+        assertThat(register.getName())
+                .isNotNull()
+                .isEqualTo(name);
+        assertThat(register.getCreationTime())
+                .isNotNull();
     }
 
 
