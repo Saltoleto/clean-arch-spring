@@ -24,7 +24,7 @@ public class Name {
 
      Name(final String name, final String lastName) {
          Objects.requireNonNull(name, "Name cant be null");
-         Objects.requireNonNull(name, "LastName cant be null");
+         Objects.requireNonNull(lastName, "LastName cant be null");
          this.name = name;
          this.lastName = lastName;
     }

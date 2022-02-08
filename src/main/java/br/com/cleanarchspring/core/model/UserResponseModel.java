@@ -5,6 +5,7 @@ import lombok.*;
 /**
  * @author Fernando Saltoleto
  */
+@Builder
 @Data
 @AllArgsConstructor
 public class UserResponseModel {
